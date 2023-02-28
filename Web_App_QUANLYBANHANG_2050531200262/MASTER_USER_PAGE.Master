@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MASTER_USER_PAGE.master.cs" Inherits="Web_App_QUANLYBANHANG_2050531200262.MASTER_USER_PAGE" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 440px;
+            height: 114px;
+        }
+
+        .auto-style2 {
+            width: 309px;
+        }
+
+        .table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="3">
+                    <img alt="" class="auto-style1" src="IMAGES/BANNER.jfif" /></td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Repeater ID="Repeater1" runat="server">
+                        <ItemTemplate>
+                            <a href="pageDANH_SACH_SAN_PHAM.aspx?MADANHMUC=<%# Eval("MADANHMUC") %>">
+                                <%# Eval("TENDANHMUC") %>
+                                <br />
+                            </a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </td>
+                <td>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
